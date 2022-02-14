@@ -1,0 +1,187 @@
+<div class="modal-section">
+    <style>
+        .background-modal{
+          z-index: 2147483645;
+          background: rgba(0,0,0,0.5);
+          backdrop-filter: blur(5px);
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+        }
+  
+        .modal{
+          font-family: 'Open Sans',sans-serif !important;
+          border-radius: 3px;
+          left: 0;
+          top: 50%;
+          right: 0;
+          max-width: 960px;
+          min-height: 397px;
+          background-color: #FFFFFF;
+          outline: 0;
+          padding: 40px 40px 32px;
+          -webkit-transform: perspective(1px) translateY(-50%);
+          transform: perspective(1px) translateY(-50%);
+          width: 100%;
+          margin: 0 auto;
+          font-size: 14px;
+          max-height: 90%;
+          overflow-x: hidden;
+          overflow-y: auto;
+          z-index: 2147483645;
+          position: fixed;     
+        }
+  
+        .modal-content{
+          display: flex;
+          flex-direction: column;
+          -moz-box-align: center;
+          align-items: center;
+          border-radius: 3px;
+          background-color: rgb(255, 255, 255);
+        }
+        
+  
+        .modal-group-text{
+          margin: 0 auto;
+          max-width: 640px;
+        }
+  
+        .banner-header{
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='164' height='48' viewBox='0 0 164 48'%3E%3Cstyle%3E.a%7Bfill:%23fff;%7D.b%7Bfill:%232a6654;%7D.c%7Bfill:%23c4d600;%7D.d%7Bfill:%23cb521c;%7D%3C/style%3E%3Crect class='a' width='164' height='48'/%3E%3Crect class='b' x='4' y='4' width='40' height='40'/%3E%3Cpath class='c' d='M28.4,27.2l7.7,2.7a8.08,8.08,0,0,0,1.1-2.7Z'/%3E%3Cpath class='c' d='M34.9,31.7l-9-4.5,6.3,7A32,32,0,0,0,34.9,31.7Z'/%3E%3Cpath class='c' d='M24.5,27.2l1.7,9.6a31.9,31.9,0,0,0,3.3-1.1Z'/%3E%3Cpath class='c' d='M23,37.3l.6-10.1L19.1,37a15.26,15.26,0,0,0,3,.3Z'/%3E%3Cpath class='c' d='M15.9,35.9l6.5-8.7-9.9,6A10.18,10.18,0,0,0,15.9,35.9Z'/%3E%3Cpath class='c' d='M10.6,27.2a7.6,7.6,0,0,0,.4,3.4l9.5-3.4Z'/%3E%3Cpolygon class='a' points='25.2 24.8 26.4 23.3 29.2 23.3 30.4 24.8 25.2 24.8'/%3E%3Cpolygon class='a' points='22.7 24.2 24.1 20 25.5 24.2 22.7 24.2'/%3E%3Cpolygon class='a' points='19.1 25.7 19.8 24.2 22.6 24.2 23.5 25.7 19.1 25.7'/%3E%3Cpath class='d' d='M36.9,10.4a49.06,49.06,0,0,0-5.5-.1,23,23,0,0,0-13.4,5,18.87,18.87,0,0,0-7,10.4h.2c1.7-5.4,6.6-9.6,13.6-10.8a25.44,25.44,0,0,1,7.3.2Z'/%3E%3Cpath class='b' d='M148.7,27.4c-1.4,0-2.2-.5-2.2-1.4s.7-1.3,2.1-1.4l3.1-.2v2.7a12.43,12.43,0,0,1-3,.3m.9-8.7a23.74,23.74,0,0,0-4.4.5l.3,2.1a24.53,24.53,0,0,1,3.9-.4c1.5,0,2.3.6,2.3,1.8v.1l-2.9.2c-3.1.1-4.5,1.2-4.5,3.2,0,2.2,1.4,3.4,3.9,3.4a35.15,35.15,0,0,0,5.9-.5V22.7c-.1-2.8-1.5-4-4.5-4m-11.2,0a13.82,13.82,0,0,0-4.3.7,4.86,4.86,0,0,0-2.8-.7,27.24,27.24,0,0,0-5.2.5V29h2.4V21a17.85,17.85,0,0,1,2.3-.2c1.6,0,2.3.7,2.3,2.3v5.8h2.5V22.4a4.44,4.44,0,0,0-.2-1.3,9.86,9.86,0,0,1,2.4-.3c1.6,0,2.3.8,2.3,2.4V29h2.4V22.6c.1-2.7-1.6-3.9-4.1-3.9m-19.8,8.7c-1.4,0-2.2-.5-2.2-1.4s.7-1.3,2.1-1.4l3.1-.2v2.7a13.3,13.3,0,0,1-3,.3m.9-8.7a23.74,23.74,0,0,0-4.4.5l.3,2.1a24.53,24.53,0,0,1,3.9-.4c1.5,0,2.3.6,2.3,1.8v.1l-2.9.2c-3.1.1-4.5,1.2-4.5,3.2,0,2.2,1.4,3.4,3.9,3.4a35.15,35.15,0,0,0,5.9-.5V22.7c-.1-2.8-1.5-4-4.5-4m-11.8,8.4a17.39,17.39,0,0,1-2.9-.2v-6a21.3,21.3,0,0,1,2.7-.2c2.2,0,3,1.4,3,3.3a2.82,2.82,0,0,1-2.8,3.1m.2-8.4a37.07,37.07,0,0,0-5.5.5V33.1h2.4V29a19.47,19.47,0,0,0,3.2.2c2.9,0,4.9-2.1,4.9-5.2s-1.8-5.3-5-5.3m-7.9.4H97.5v8.1c-1,.1-1.9.2-2.8.2A2.09,2.09,0,0,1,92.4,25V19.1H90v6.5c0,2.8,1.7,3.9,4.2,3.9A40.38,40.38,0,0,0,100,29ZM82.8,27.3a3,3,0,0,1-3.2-3.2,3,3,0,0,1,3.2-3.2,3,3,0,0,1,3.1,3.2,3,3,0,0,1-3.1,3.2m0-8.7c-3.4,0-5.6,2.2-5.6,5.4a5.6,5.6,0,0,0,11.2,0,5.25,5.25,0,0,0-5.6-5.4m-6.1.1a42,42,0,0,0-6.2.6V29h2.4V21.2c1.2-.1,2.4-.1,3.7-.1V18.7Zm-8.3,2.1H60.8v2.4H66v3.1a15.77,15.77,0,0,1-4.2.6,4.75,4.75,0,0,1-5-5.1c0-3,2.2-5,5.6-5a26.07,26.07,0,0,1,4.3.6L67,15a24.15,24.15,0,0,0-5-.6c-4.8,0-8.1,3-8.1,7.5s3.1,7.6,7.7,7.6a17.63,17.63,0,0,0,6.7-1.6V20.8Z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          display: block;
+          height: 48px;
+          margin: 0 auto 24px;
+          width: 164px;
+        }
+  
+        .modal-title{
+          color: #006a53;
+          float: none;
+          font-family: 'Gotham SSm','Open Sans',sans-serif !important;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 1.3;
+          padding: 0;
+          text-align: center;
+          width: auto;
+        }
+  
+        .modal-text{
+          float: none;
+          font-size: 14px;
+          line-height: 1.4;
+          margin: 16px 0 24px;
+          text-align: center;
+          max-width: 640px;
+          color: #222;
+          clear: both;
+          margin: 0px;
+          text-transform: none;
+          font-family: "OpenSans", Arial, Helvetica, sans-serif;
+        }
+  
+        .btn-delete-modal{
+          background-color: transparent;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 16'%3E%3Cpath fill='%23004691' d='M1.178 15.057l-.08-.147c-.289-.6-.256-1.349.164-1.818l4.851-5.061L1.3 3.007l-.047-.04c-.565-.54-.565-1.537 0-2.077l.06-.05-.05.048A1.523 1.523 0 012.357.4c.395 0 .631.125.878.372l5.188 5.415c.473.526.748 1.185.748 1.843 0 .658-.275 1.317-.732 1.825L3.327 15.19l-.093.082c-.61.454-1.475.454-1.972-.1l-.084-.115z'%3E%3C/path%3E%3C/svg%3E");
+          background-position: right center;
+          background-repeat: no-repeat;
+          background-size: 13px 13px;
+          border: none;
+          font-family: "Gotham SSm", Arial, Helvetica, sans-serif;
+          border-radius: 0;
+          color: #004691;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.2;
+          margin: 0;
+          padding: 0 22px 0 0 !important;
+          text-decoration: none;
+          width: auto;
+        }
+  
+        .modal-group-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px 0px 0px 0px;
+        }
+  
+  
+        .lds-dual-ring {
+          display: inline-block;
+          width: 64px;
+          height: 64px;
+        }
+        .lds-dual-ring:after {
+          content: " ";
+          display: block;
+          width: 64px;
+          height: 64px;
+          margin: 0px;
+          border-radius: 50%;
+          border: 6px solid #e26212;
+          border-color: #e26212 transparent #e26212 transparent;
+          animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+  
+        @media screen and (min-width: 600px){
+          .btn-delete-modal{
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            white-space: nowrap;
+            width: auto;
+              }
+        }
+  
+        @media screen and (max-width: 600px){
+          .btn-delete-modal{
+            margin-top: 20px;
+              }
+        }
+  
+        @media screen and (max-width: 1024px){
+          .modal{
+          font-family: 'Open Sans',sans-serif !important;
+          border-radius: 0px;
+          max-width: 100%;   
+        }
+        }
+    </style>
+  
+    <div class="background-modal"></div>
+    <div class="modal">
+      <div class="modal-content">
+          <div class="modal-group-text">
+            <div class="banner-header">
+              <div class="banner_logo"></div>
+            </div>
+            <h3 class="modal-title">Groupama protège votre vie privée</h3>
+            <p class="modal-text">Lorsque vous naviguez sur notre site, nous recueillons des informations pour
+              mesurer l’audience, améliorer notre site, interagir avec vous et vous présenter des offres personnalisées.
+              En les autorisant, votre navigation sera simplifiée.<br>Vous avez le droit de changer d’avis à tout moment
+              en cliquant sur « Gérer mes cookies » en bas de chaque page Groupama.fr</p>
+          </div>
+          <div class="modal-group-btn">
+            <div class="lds-dual-ring"></div>
+            <button class="btn-delete-modal">Reporter sans choisir</button>
+          </div>
+      </div>
+    </div>
+  
+  </div>
